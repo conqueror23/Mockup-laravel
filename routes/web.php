@@ -12,13 +12,15 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->middleware('TrimStrings');
 
 Route::get('/checkUser', function () {
     return view('welcome');
 });
 
-Route::match(['get','post'], function () {
-    console.log('you are reaching some where in the request');
-});
+Route::get('/xml','Controller@readXml');
+
+// Route::match(['get','post'], function () {
+//     console.log('you are reaching some where in the request');
+// });
 
